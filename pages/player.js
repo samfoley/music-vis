@@ -29,17 +29,6 @@ var rmsPeakTime = 0;
 var rmsMax = 0;
 
 async function initVisualisation(audioRef, visRef) {    
-    const SoundcloudModule = await import('soundcloud');
-    let Soundcloud = SoundcloudModule.default;
-
-    Soundcloud.initialize({
-        client_id: '4T2gPF6aeAa4QvMYLU0mgjxqDiHtSAbB',
-        redirect_uri: 'http://samfoley.com'});
-
-        SC.get('/me/reposts/tracks').then(function(tracks){
-            console.log(tracks);
-          });
-
     audioElement = audioRef.current;
     const VisualisationModule = await import('../src/visualisation');    
     visualiser = new VisualisationModule.default(visRef.current);    
